@@ -4,6 +4,13 @@ plugins {
     application
 }
 
+kotlin.jvmToolchain(17)
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
 group = "com.banie.jumlah"
 version = "1.0.0"
 application {

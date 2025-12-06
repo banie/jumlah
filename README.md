@@ -93,3 +93,19 @@ Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-mu
 
 We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
 If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
+
+### JDK requirements
+
+This project requires Java 17.
+
+- The build uses the Gradle Foojay Toolchains Resolver to automatically provision JDK 17 when possible.
+- We also declare Kotlin/Java toolchains in each module to target Java 17.
+
+If your Gradle daemon is running on an older JDK, please ensure your environment uses JDK 17 when invoking Gradle:
+
+- macOS/Linux:
+  - export JAVA_HOME to a JDK 17 installation before running ./gradlew
+- Windows (PowerShell):
+  - setx JAVA_HOME "C:\\Program Files\\Java\\jdk-17"
+
+Alternatively, in IntelliJ IDEA or Android Studio, set Gradle JVM to a JDK 17 in Settings > Build, Execution, Deployment > Build Tools > Gradle.

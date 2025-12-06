@@ -9,3 +9,24 @@ plugins {
     alias(libs.plugins.kotlinJvm) apply false
     alias(libs.plugins.kotlinMultiplatform) apply false
 }
+
+// Configure Java toolchain for all subprojects
+//subprojects {
+//    tasks.withType<JavaCompile>().configureEach {
+//        options.release.set(17)
+//    }
+//    afterEvaluate {
+//        // Only apply release option to non-Android modules
+//        if (!plugins.hasPlugin("com.android.application") && !plugins.hasPlugin("com.android.library")) {
+//            tasks.withType<JavaCompile>().configureEach {
+//                options.release.set(17)
+//            }
+//        }
+//
+//        extensions.findByType<JavaPluginExtension>()?.apply {
+//            toolchain {
+//                languageVersion.set(JavaLanguageVersion.of(17))
+//            }
+//        }
+//    }
+//}
